@@ -22,8 +22,11 @@ button.on("click", function() {
   var shapeinputElement = d3.select("#shape");
   var shapeValue = shapeinputElement.property("value");
 
-  var filteredData = tableData;
+  if (!!dateValue || !!cityValue || !!stateValue || !!countryValue || !!shapeValue) {
 
+  var filteredData = tableData;
+  };
+  
   if (!!dateValue) {
     var filteredData = filteredData.filter(day => day.datetime === dateValue);
   };
